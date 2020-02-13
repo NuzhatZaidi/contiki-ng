@@ -331,5 +331,4 @@
 /* CCA threshold in dBm */
 #define CC1200_CONST_CCA_THRESHOLD_MIN  (-127)
 #define CC1200_CONST_CCA_THRESHOLD_MAX  127
-rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 10); 
 #endif /* CC1200_CONST_H_ */
