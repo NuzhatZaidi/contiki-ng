@@ -59,7 +59,7 @@ udp_rx_callback(struct simple_udp_connection *c,
   LOG_INFO_("\n");
 #if WITH_SERVER_REPLY
   /* send back the same string to the client as an echo reply */
-  LOG_INFO("Sending response.\n");
+  LOG_INFO("Sending response. Nuzhat\n");
   simple_udp_sendto(&udp_conn, data, datalen, sender_addr);
 #endif /* WITH_SERVER_REPLY */
 }
