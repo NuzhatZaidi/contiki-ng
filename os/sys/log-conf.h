@@ -103,15 +103,7 @@
 /******************************************************************************/
 
 #ifndef LOG_CONF_LEVEL_RPL
-#define LOG_CONF_LEVEL_RPL                         LOG_LEVEL_ERR /* Only for rpl-lite */
-#endif
-
-#ifndef LOG_CONF_LEVEL_RPL
-#define LOG_CONF_LEVEL_RPL                         LOG_LEVEL_WARN /* Only for rpl-lite */
-#endif
-
-#ifndef LOG_CONF_LEVEL_RPL
-#define LOG_CONF_LEVEL_RPL                         LOG_LEVEL_INFO /* Only for rpl-lite */
+#define LOG_CONF_LEVEL_RPL                         {LOG_LEVEL_ERR; LOG_LEVEL_WARN; LOG_LEVEL_INFO}
 #endif /* LOG_CONF_LEVEL_RPL */
 
 #ifndef LOG_CONF_LEVEL_TCPIP
