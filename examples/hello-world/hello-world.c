@@ -60,7 +60,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
 
   while(1) {
     printf("Hello Nuzhat\n");
-    printf("Transmissio power of this node is %d \n", CC2538_RF_TX_POWER_RECOMMENDED);
+    printf("Transmissio power: %d \n", CC2538_RF_TX_POWER_RECOMMENDED);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
