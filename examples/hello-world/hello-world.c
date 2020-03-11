@@ -39,6 +39,7 @@
 
 #include "contiki.h"
 #include "dev/cc2538-rf.h"
+#include "sys/node-id.h"
 /*#include "dev/radio.h"
 #include "dev/rfcore.h"
 #include "reg.h"*/
@@ -60,7 +61,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
 
   while(1) {
     printf("Hello Nuzhat\n");
-    printf("Transmissio power: %d \n", CC2538_RF_TX_POWER_RECOMMENDED);
+    printf("Transmissio power of %d : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
