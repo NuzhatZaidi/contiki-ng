@@ -38,8 +38,8 @@
  */
 
 #include "contiki.h"
-#include "dev/cc2538-rf.h"
-/*#include "dev/radio.h"
+/*#include "dev/cc2538-rf.h"
+#include "dev/radio.h"
 #include "dev/rfcore.h"
 #include "reg.h"*/
 #include <stdio.h> /* For printf() */
