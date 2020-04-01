@@ -67,7 +67,7 @@ udp_rx_callback(struct simple_udp_connection *c,
         // printf("S_addr %x \n",&sender_addr);
          //printf("R_addr %x \n",&receiver_addr);
          printf("Transmissio power of %d is %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
-         printf("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
+         printf(":::::::::::::::::::::::::::::::::::::::::::Server:::::::::::::::::::::::::::::::::::::::::\n");
   simple_udp_sendto(&udp_conn, data, datalen, sender_addr);
 #endif /* WITH_SERVER_REPLY */
 }
