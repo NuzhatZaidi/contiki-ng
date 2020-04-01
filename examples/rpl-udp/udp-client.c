@@ -4,6 +4,9 @@
 #include "net/netstack.h"
 #include "net/ipv6/simple-udp.h"
 
+#include "dev/cc2538-rf.h"
+#include "sys/node-id.h"
+
 #include "sys/log.h"
 #define LOG_MODULE "App"
 #define LOG_LEVEL LOG_LEVEL_INFO
