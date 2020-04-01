@@ -32,6 +32,9 @@
 #include "net/netstack.h"
 #include "net/ipv6/simple-udp.h"
 
+#include "dev/cc2538-rf.h"
+#include "sys/node-id.h"
+
 #include "sys/log.h"
 #define LOG_MODULE "App"
 #define LOG_LEVEL LOG_LEVEL_INFO
@@ -60,6 +63,7 @@ udp_rx_callback(struct simple_udp_connection *c,
 #if WITH_SERVER_REPLY
   /* send back the same string to the client as an echo reply */
   LOG_INFO("Sending response. Nuzhat\n");
+         printf("Transmissio power of %d , %x : %x \n", node_id, sender_addr, CC2538_RF_TX_POWER_RECOMMENDED);
   simple_udp_sendto(&udp_conn, data, datalen, sender_addr);
 #endif /* WITH_SERVER_REPLY */
 }
