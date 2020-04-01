@@ -62,6 +62,8 @@ PROCESS_THREAD(udp_client_process, ev, data)
       LOG_INFO_6ADDR(&dest_ipaddr);
       LOG_INFO_("\n Nuzhat Zaidi \n");
       printf(str, sizeof(str), "hello i am udp client%d", count);
+      printf("Transmissio power of %d is %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
+      printf(":::::::::::::::::::::::::::::::::::::::::Client:::::::::::::::::::::::::::::::::::::::::::\n");
       simple_udp_sendto(&udp_conn, str, strlen(str), &dest_ipaddr);
       count++;
     } else {
