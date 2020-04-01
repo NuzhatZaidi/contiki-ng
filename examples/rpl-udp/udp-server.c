@@ -63,7 +63,9 @@ udp_rx_callback(struct simple_udp_connection *c,
 #if WITH_SERVER_REPLY
   /* send back the same string to the client as an echo reply */
   LOG_INFO("Sending response. Nuzhat\n");
-         printf("Transmissio power of %d , %x : %x \n", node_id, sender_addr, CC2538_RF_TX_POWER_RECOMMENDED);
+         printf("Server Side data \n");
+         printf("S_addr %x , S_port %d , R_addr %x , S_port %d \n",sender_addr, sender_port, receiver_addr, receiver_port);
+         printf("Transmissio power of %d is %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
   simple_udp_sendto(&udp_conn, data, datalen, sender_addr);
 #endif /* WITH_SERVER_REPLY */
 }
