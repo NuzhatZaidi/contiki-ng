@@ -67,7 +67,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
   while(1) {
     printf("Hello Nuzhat\n");
    
-    cc2420_set_txpower(14);
+    cc2420_set_txpower(15);
     printf("%d", txVal = cc2420_get_txpower());
     
     //rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
