@@ -62,7 +62,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
   /* Setup a periodic timer that expires after 10 seconds. */
   etimer_set(&timer, CLOCK_SECOND * 10);
  
-  String rd ;
+  Char rd ;
   //  int txVal;
   while(1) {
     printf("Hello Nuzhat\n");
@@ -71,7 +71,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
    // printf("%d", txVal = cc2420_get_txpower());
     
     rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    printf("Transmissio power of %d : %s \n", rd );
+    printf("Transmissio power of %s \n", rd );
     //printf("Transmissio power of %d : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
