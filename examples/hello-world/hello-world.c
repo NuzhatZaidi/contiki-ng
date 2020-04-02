@@ -45,9 +45,9 @@
 #include "dev/cc2420/cc2420.h"
 #include "net/netstack.h"
 
-/*#include "dev/radio.h"
+#include "dev/radio.h"
 #include "dev/rfcore.h"
-#include "reg.h"*/
+#include "reg.h
 #include <stdio.h> /* For printf() */
 /*---------------------------------------------------------------------------*/
 PROCESS(hello_world_process, "Hello world process");
@@ -62,16 +62,16 @@ PROCESS_THREAD(hello_world_process, ev, data)
   /* Setup a periodic timer that expires after 10 seconds. */
   etimer_set(&timer, CLOCK_SECOND * 10);
  
-  //String rd ;
-    int txVal;
+  String rd ;
+  //  int txVal;
   while(1) {
     printf("Hello Nuzhat\n");
    
-    cc2420_set_txpower(15);
-    printf("%d", txVal = cc2420_get_txpower());
+    //cc2420_set_txpower(15);
+   // printf("%d", txVal = cc2420_get_txpower());
     
-    //rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    //printf("Transmissio power of %d : %s \n", rd );
+    rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
+    printf("Transmissio power of %d : %s \n", rd );
     //printf("Transmissio power of %d : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
