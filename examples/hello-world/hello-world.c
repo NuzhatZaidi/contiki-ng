@@ -41,8 +41,8 @@
 #include "dev/cc2538-rf.h"
 #include "sys/node-id.h"
 
-#include "dev/cc2420_const.h"
-#include "dev/cc2420.h"
+#include "dev/cc2420/cc2420_const.h"
+#include "dev/cc2420/cc2420.h"
 #include "net/netstack.h"
 
 /*#include "dev/radio.h"
