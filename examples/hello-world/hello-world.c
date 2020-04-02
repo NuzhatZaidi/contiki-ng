@@ -40,6 +40,11 @@
 #include "contiki.h"
 #include "dev/cc2538-rf.h"
 #include "sys/node-id.h"
+
+#include "cc2420.h"
+#include "cc2420_const.h"
+#include "net/netstack.h"
+
 /*#include "dev/radio.h"
 #include "dev/rfcore.h"
 #include "reg.h"*/
@@ -57,12 +62,17 @@ PROCESS_THREAD(hello_world_process, ev, data)
   /* Setup a periodic timer that expires after 10 seconds. */
   etimer_set(&timer, CLOCK_SECOND * 10);
  
-  
-
+  //String rd ;
+    int txVal;
   while(1) {
     printf("Hello Nuzhat\n");
-    printf("Transmissio power of %d : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
-
+   
+    cc2420_set_txpower(14);
+    printf("%d", txVal = cc2420_get_txpower());
+    
+    //rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
+    //printf("Transmissio power of %d : %s \n", rd );
+    //printf("Transmissio power of %d : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
     etimer_reset(&timer);
