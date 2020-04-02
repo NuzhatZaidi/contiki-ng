@@ -43,6 +43,7 @@
 
 #include "cc2420.h"
 #include "cc2420_const.h"
+#include "cc2420.h"
 #include "net/netstack.h"
 
 /*#include "dev/radio.h"
