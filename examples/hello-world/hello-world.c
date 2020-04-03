@@ -39,6 +39,9 @@
 
 #include "contiki.h"
 
+#include "dev/cc2538-rf.h"
+#include "net/netstack.h"
+
 #include <stdio.h> /* For printf() */
 /*---------------------------------------------------------------------------*/
 PROCESS(hello_world_process, "Hello world process");
@@ -54,7 +57,11 @@ PROCESS_THREAD(hello_world_process, ev, data)
   etimer_set(&timer, CLOCK_SECOND * 10);
 
   while(1) {
-    printf("Hello, world\n");
+    printf("Hello, Nuzhat\n");
+    
+    char rd;
+    rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
+    printf("Transmissio power of %c: \n", rd);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
