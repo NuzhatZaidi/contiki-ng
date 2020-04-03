@@ -65,7 +65,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
     //int txVal;
   while(1) {
     printf("Hello Nuzhat\n");
-    const Char rd;
+    char rd;
     //cc2420_set_txpower(15);
     //printf("%d", txVal = cc2420_get_txpower());
     
