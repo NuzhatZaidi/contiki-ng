@@ -57,7 +57,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
   etimer_set(&timer, CLOCK_SECOND * 10);
 
   while(1) {
-    printf("Hello, Nuzhat I am hre\n");
+    printf("Hello000, Nuzhat I am hre\n");
     
     char rd;
     rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
