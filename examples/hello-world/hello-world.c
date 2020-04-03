@@ -61,7 +61,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
     
     char rd;
     rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    printf("reset txpower value %c: \n", rd);
+    printf("return status - txpower value %c: \n", rd);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
