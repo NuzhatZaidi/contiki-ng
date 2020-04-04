@@ -62,7 +62,7 @@ udp_rx_callback(struct simple_udp_connection *c,
   LOG_INFO_("\n");
 #if WITH_SERVER_REPLY
   /* send back the same string to the client as an echo reply */
-  LOG_INFO("Sending response. Nuzhat\n");
+  LOG_INFO("Sending response. Nuzhat Zaidi\n");
          printf("Server Side data \n");
         // printf("S_addr %x \n",&sender_addr);
          //printf("R_addr %x \n",&receiver_addr);
