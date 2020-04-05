@@ -64,7 +64,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
     
     char rd;
     rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    if(rd==NULL)
+    if(rd=="")
     {
       printf("red is returning null value\n");
 
