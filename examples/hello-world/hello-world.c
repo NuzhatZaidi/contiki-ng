@@ -66,15 +66,14 @@ PROCESS_THREAD(hello_world_process, ev, data)
 
     //rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
   
-    printf("return status - txpower value print all %x: \n", NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, 15));
+    printf("return status - txpower value print all %x: \n", NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, 26));
       
        //printf("Transmissio power of %s : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
     etimer_reset(&timer);
-  }
-
+  } 
   PROCESS_END();
 }
 /*---------------------------------------------------------------------------*/
