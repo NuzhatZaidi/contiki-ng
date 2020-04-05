@@ -56,12 +56,14 @@ PROCESS_THREAD(hello_world_process, ev, data)
   /* Setup a periodic timer that expires after 10 seconds. */
   etimer_set(&timer, CLOCK_SECOND * 10);
 
+
+
   while(1) {
-    printf("Hello000, Nuzhat I am hre\n");
+    printf("Hello, Nuzhat I am hre\n");
     
-    char rd;
+    char rd[100];
     rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    printf("return status - txpower value %c: \n", rd);
+    printf("return status - txpower value print all %c********\nor print ist character%c: \n", rd,rd[0]);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
