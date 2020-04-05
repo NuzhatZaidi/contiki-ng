@@ -61,9 +61,9 @@ PROCESS_THREAD(hello_world_process, ev, data)
   while(1) {
     printf("Hello, Nuzhat I am hre\n");
     
-    char rd[100];
+    char rd;
     rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    printf("return status - txpower value print all %c********\nor print ist character%c: \n", rd,rd[0]);
+    printf("return status - txpower value print all %c: \n", rd);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
