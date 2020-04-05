@@ -62,14 +62,14 @@ PROCESS_THREAD(hello_world_process, ev, data)
   while(1) {
     printf("Hello, Nuzhat I am hre\n");
     
-    char rd;
+    string rd;
     rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    if(rd=="")
+    if(rd[0] != '\0')
     {
       printf("red is returning null value\n");
 
     }
-    printf("return status - txpower value print all %c: \n", rd);
+    printf("return status - txpower value print all %s: \n", rd);
       
         printf("Transmissio power of %d : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
 
