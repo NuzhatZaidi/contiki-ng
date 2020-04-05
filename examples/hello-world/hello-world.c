@@ -40,6 +40,7 @@
 #include "contiki.h"
 
 #include "dev/cc2538-rf.h"
+#include "sys/node-id.h"
 #include "net/netstack.h"
 
 #include <stdio.h> /* For printf() */
@@ -61,9 +62,11 @@ PROCESS_THREAD(hello_world_process, ev, data)
   while(1) {
     printf("Hello, Nuzhat I am hre\n");
     
-    char rd;
-    rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
-    printf("return status - txpower value print all %c: \n", rd);
+    //char rd;
+    //rd = NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
+    //printf("return status - txpower value print all %c: \n", rd);
+      
+        printf("Transmissio power of %d : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
 
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
