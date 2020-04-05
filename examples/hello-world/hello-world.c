@@ -65,7 +65,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
     
    //NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19);
   
-    printf("return status - txpower value print all %x: \n", NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19));
+    printf("return status - txpower value print all %s: \n", NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 19));
       
        // printf("Transmissio power of %s : %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
 
