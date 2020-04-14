@@ -956,35 +956,43 @@ set_value(radio_param_t param, radio_value_t value)
   case RADIO_PARAM_POWER_MODE:
     if(value == RADIO_POWER_MODE_ON) {
       on();
+      printf("callin 1");
       return RADIO_RESULT_OK;
     }
     if(value == RADIO_POWER_MODE_OFF) {
       off();
+      printf("callin 2");
       return RADIO_RESULT_OK;
     }
     if(value == RADIO_POWER_MODE_CARRIER_ON ||
        value == RADIO_POWER_MODE_CARRIER_OFF) {
       set_test_mode((value == RADIO_POWER_MODE_CARRIER_ON), 0);
+      printf("callin 3");
       return RADIO_RESULT_OK;
     }
     return RADIO_RESULT_INVALID_VALUE;
   case RADIO_PARAM_CHANNEL:
     if(value < CC2538_RF_CHANNEL_MIN ||
        value > CC2538_RF_CHANNEL_MAX) {
+      printf("callin 4");
       return RADIO_RESULT_INVALID_VALUE;
     }
     set_channel(value);
+      printf("callin 5");
     return RADIO_RESULT_OK;
   case RADIO_PARAM_PAN_ID:
     set_pan_id(value & 0xffff);
+      printf("callin 6");
     return RADIO_RESULT_OK;
   case RADIO_PARAM_16BIT_ADDR:
     set_short_addr(value & 0xffff);
+      printf("callin 7");
     return RADIO_RESULT_OK;
   case RADIO_PARAM_RX_MODE:
     if(value & ~(RADIO_RX_MODE_ADDRESS_FILTER |
                  RADIO_RX_MODE_AUTOACK |
                  RADIO_RX_MODE_POLL_MODE)) {
+      printf("callin 8");
       return RADIO_RESULT_INVALID_VALUE;
     }
 
@@ -995,12 +1003,14 @@ set_value(radio_param_t param, radio_value_t value)
     return RADIO_RESULT_OK;
   case RADIO_PARAM_TX_MODE:
     if(value & ~(RADIO_TX_MODE_SEND_ON_CCA)) {
+      printf("callin 9");
       return RADIO_RESULT_INVALID_VALUE;
     }
     set_send_on_cca((value & RADIO_TX_MODE_SEND_ON_CCA) != 0);
     return RADIO_RESULT_OK;
   case RADIO_PARAM_TXPOWER:
     if(value < OUTPUT_POWER_MIN || value > OUTPUT_POWER_MAX) {
+       printf("callin 10");
       return RADIO_RESULT_INVALID_VALUE;
     }
 

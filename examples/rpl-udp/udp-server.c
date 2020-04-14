@@ -66,8 +66,8 @@ udp_rx_callback(struct simple_udp_connection *c,
          printf("Server Side data \n");
         // printf("S_addr %x \n",&sender_addr);
          //printf("R_addr %x \n",&receiver_addr);
-         printf("Transmissio power of %d is %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
-         printf(":::::::::::::::::::::::::::::::::::::::::::Server:::::::::::::::::::::::::::::::::::::::::\n");
+         //printf("Transmissio power of %d is %x \n", node_id, CC2538_RF_TX_POWER_RECOMMENDED);
+         //printf(":::::::::::::::::::::::::::::::::::::::::::Server:::::::::::::::::::::::::::::::::::::::::\n");
   simple_udp_sendto(&udp_conn, data, datalen, sender_addr);
 #endif /* WITH_SERVER_REPLY */
 }
@@ -82,6 +82,7 @@ PROCESS_THREAD(udp_server_process, ev, data)
   /* Initialize UDP connection */
   simple_udp_register(&udp_conn, UDP_SERVER_PORT, NULL,
                       UDP_CLIENT_PORT, udp_rx_callback);
+                      printf(":::::::::::::::::::::::::::::::::::::::::::Server:::::::::::::::::::::::::::::::::::::::::\n");
 
   PROCESS_END();
 }
