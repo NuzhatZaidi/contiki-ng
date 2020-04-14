@@ -56,7 +56,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
                       UDP_SERVER_PORT, udp_rx_callback);
 
   etimer_set(&periodic_timer, random_rand() % SEND_INTERVAL);
-  bool set_radio_pwr = False; 
+  bool set_radio_pwr = false; 
   int value = 0;
   while(1) {
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&periodic_timer));
@@ -71,17 +71,17 @@ PROCESS_THREAD(udp_client_process, ev, data)
       //printf(":::::::::::::::::::::::::::::::::::::::::Client:::::::::::::::::::::::::::::::::::::::::::\n");
       simple_udp_sendto(&udp_conn, str, strlen(str), &dest_ipaddr);
       count++;
-      if (set_radio_pwr == False)
+      if (set_radio_pwr == false)
       {
         int value= 5;
-        NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value));
-        set_radio_pwr = True;
+        NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value);
+        set_radio_pwr = true;
       }
-      else if (set_radio_pwr == True)
+      else if (set_radio_pwr == true)
       {
         int value= -15;
-        NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value));
-        set_radio_pwr = False;
+        NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value);
+        set_radio_pwr = false;
       }
       printf("Transmission Power is %d", value);
 
