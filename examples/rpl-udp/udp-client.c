@@ -57,7 +57,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
 
   etimer_set(&periodic_timer, random_rand() % SEND_INTERVAL);
   
-  bool set_radio_pwr = false; 
+  bool set_radio_pwr == false; 
   int value = 10;
   while(1) {
     
@@ -77,13 +77,13 @@ PROCESS_THREAD(udp_client_process, ev, data)
       {
         int value= 5;
         NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value);
-        set_radio_pwr = true;
+        set_radio_pwr == true;
       }
       else if (set_radio_pwr == true)
       {
         int value= -15;
         NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value);
-        set_radio_pwr = false;
+        set_radio_pwr == false;
       }
       printf("Transmission Power is %d", value);
 
