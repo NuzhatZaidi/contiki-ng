@@ -57,7 +57,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
 
   etimer_set(&periodic_timer, random_rand() % SEND_INTERVAL);
   
-  int value;
+  int value = 10;
   while(1) {
     bool set_radio_pwr = false; 
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&periodic_timer));
