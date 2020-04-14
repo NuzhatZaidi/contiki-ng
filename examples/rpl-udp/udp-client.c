@@ -75,13 +75,13 @@ PROCESS_THREAD(udp_client_process, ev, data)
       if (set_radio_pwr == false)
       {
         int value= 5;
-        NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value);
+        set_value(RADIO_PARAM_TXPOWER, value);
         set_radio_pwr = true;
       }
       else if (set_radio_pwr == true)
       {
         int value= -15;
-        NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, value);
+        set_value(RADIO_PARAM_TXPOWER, value);
         set_radio_pwr = false;
       }
       printf("Transmission Power is %d", value);
