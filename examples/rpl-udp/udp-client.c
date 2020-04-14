@@ -6,6 +6,7 @@
 
 #include "dev/cc2538-rf.h"
 #include "sys/node-id.h"
+#include "dev/radio.h"
 
 #include "sys/log.h"
 #define LOG_MODULE "App"
@@ -57,10 +58,10 @@ PROCESS_THREAD(udp_client_process, ev, data)
 
   etimer_set(&periodic_timer, random_rand() % SEND_INTERVAL);
   
-  bool set_radio_pwr = false; 
+  
   int value = 10;
   while(1) {
-    
+    bool set_radio_pwr = false; 
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&periodic_timer));
 
     if(NETSTACK_ROUTING.node_is_reachable() && NETSTACK_ROUTING.get_root_ipaddr(&dest_ipaddr)) {
